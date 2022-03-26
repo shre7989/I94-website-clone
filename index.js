@@ -1,6 +1,3 @@
-const fs = require("fs");
-console.log(fs);
-
 const submitBtn = document.querySelector(".btn-submit");
 const inputs = document.querySelectorAll("input"); //get all the inputs
 
@@ -18,11 +15,17 @@ const submitForm = function (e) {
   //validate
 };
 
+/**
+ * Checks if any of the input fields are empty and then applies red border stylimg around the empty fields
+ * @param {*} inputs inputs entered in the form fields
+ */
 const checkIfEmpty = function (inputs) {
   for (let input of inputs) {
     if (input.value === "") {
-      input.classList.add("invalid_input");
+      //checking if the input fields are empty
+      input.classList.add("invalid_input"); //invalid_input class applies red border styling
     }
   }
 };
+const validateInput = function (inputs) {};
 submitBtn.addEventListener("click", submitForm);
