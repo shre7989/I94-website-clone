@@ -12,6 +12,24 @@ body {
     "Lucida Sans", Arial, sans-serif;
   background-color: #eeeeee;
 }
+/* Common text stylings */
+p {
+  color: grey;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 0.8rem;
+}
+strong {
+  color: dimgrey;
+  margin-right: 0.3rem;
+}
+label {
+  display: block;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+i {
+  font-family: "Times New Roman", Times, serif;
+}
 /* Section title heading styles */
 .title {
   font-size: 2rem;
@@ -23,9 +41,6 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 300;
   color: darkslategray;
-}
-i {
-  font-family: "Times New Roman", Times, serif;
 }
 .header_icon-div {
   position: relative;
@@ -46,13 +61,13 @@ i {
   padding: 0.5rem;
   background-color: white;
 }
-/* common container styling*/
+/* common container title styling*/
 .title_container {
   font-family: "Times New Roman", Times, serif;
   color: darkslategrey;
   font-weight: 500;
 }
-/* styling for header above the form section */
+/* styling for header section */
 #header {
   width: 100vw;
   background-color: white;
@@ -90,22 +105,7 @@ nav {
 .tab_traveler-info {
   border-right: none;
 }
-/* Common text stylings */
-p {
-  color: grey;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 0.8rem;
-}
-strong {
-  color: dimgrey;
-  margin-right: 0.3rem;
-}
-label {
-  display: block;
-  font-weight: 500;
-  padding-bottom: 0.5rem;
-}
-/*main container*/
+/*main container styling*/
 .container {
   width: 50vw;
   padding: 2rem;
@@ -163,14 +163,14 @@ label {
 #help-symbol_date {
   transform: translateY(-40%);
 }
-
+/* Doc input field */
 #form-fieldSet_docNo {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "a b";
   column-gap: 1rem;
 }
-
+/* Country input field */
 #form-fieldSet_country {
   display: grid;
   grid-template-columns: 1fr;
@@ -183,8 +183,6 @@ label {
 #help-symbol_country {
   transform: translateY(50%);
 }
-/* Doc form input field ser */
-
 /* Buttons in form */
 #form-section_btn {
   display: flex;
@@ -205,39 +203,20 @@ label {
   cursor: pointer;
   filter: brightness(90%);
 }
-.btn-submit {
+.btn_submit {
   background-color: #0071bc;
   font-weight: bold;
   border: 3px solid #205493;
   color: white;
 }
-.btn-cancel {
+.btn_cancel {
   background-color: red;
   border: 3px solid rgba(197, 11, 11, 0.541);
   font-weight: bold;
   color: white;
 }
 
-/* Icons  */
-hr {
-  position: relative;
-}
-.line-icon {
-  position: absolute;
-  left: 48%;
-  color: goldenrod;
-  padding: 1rem;
-  transform: translateY(-110%);
-  background-color: white;
-}
-.help-symbol {
-  color: lightslategrey;
-}
-.help-symbol:hover {
-  cursor: pointer;
-  color: black;
-}
-/* I94 record styling */
+/* I94 record container styling */
 .header_i94 {
   display: flex;
   flex-direction: column;
@@ -267,7 +246,6 @@ hr {
 h3 {
   color: rgb(136, 101, 14);
 }
-
 h4 {
   font-family: Arial, Helvetica, sans-serif;
   color: #01205b;
@@ -289,14 +267,14 @@ hr {
   margin-left: 3rem;
   margin-bottom: 3rem;
 }
-.btn_prev {
-  color: white;
-  background-color: lightgray;
-}
 .i94-btns {
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.btn_prev {
+  background-color: lightgray;
 }
 .btn_i94 {
   display: flex;
@@ -304,7 +282,6 @@ hr {
   justify-content: center;
 }
 .btn_print {
-  color: white;
   background: #0071bc;
   border: 3px solid #205493;
 }
@@ -312,6 +289,27 @@ hr {
   background: #205493;
   border-color: #0071bc;
 }
+
+/* Icons  */
+hr {
+  position: relative;
+}
+.line-icon {
+  position: absolute;
+  left: 48%;
+  color: goldenrod;
+  padding: 1rem;
+  transform: translateY(-110%);
+  background-color: white;
+}
+.help-symbol {
+  color: lightslategrey;
+}
+.help-symbol:hover {
+  cursor: pointer;
+  color: black;
+}
+
 /* Helper classes */
 .inactive {
   display: none;
@@ -322,8 +320,11 @@ hr {
 }
 .tab-active {
   background-color: white;
-  border: 3px solid darkblue;
+  border: 3px solid rgb(3, 3, 85);
   border-bottom: none;
   font-weight: 800;
   color: darkblue;
+}
+.tab-active > .tab-heading {
+  font-weight: bold;
 }

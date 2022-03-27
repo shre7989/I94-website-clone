@@ -1,8 +1,13 @@
 //buttons
-const submitBtn = document.querySelector(".btn-submit");
+const submitBtn = document.querySelector(".btn_submit"); //form submit button
+const cancelBtn = document.querySelector(".btn_cancel"); //form cancel button
+const prevBtn = document.querySelector(".btn_prev"); //previous page button
+const printBtn = document.querySelector(".btn_print"); //print page button
 
 //eventlisteners
-submitBtn.addEventListener("click", submitForm); // listen for submit button click
+submitBtn.addEventListener("click", submitForm); // submit form on click
+prevBtn.addEventListener("click", goPrevPage); //go back to page on click
+printBtn.addEventListener("click", () => window.print()); //print window contents on click
 
 //functions
 /**
@@ -13,8 +18,8 @@ function submitForm(event) {
   event.preventDefault(); //prevent the browser from refreshing everytime we submit
 
   //Selecting elements
-  const body = document.querySelector("body"); //main body
   const formContainer = document.querySelector("#container_form");
+  const i94Container = document.querySelector("#container_i94");
   const travelerInfoTab = document.querySelector(".tab_traveler-info");
   const i94ResultsTab = document.querySelector(".tab_i94-results");
 
@@ -55,15 +60,14 @@ function submitForm(event) {
       country: "India",
     },
   ];
-  const i94Template = `<section id="container_i94" class="container">
-<header class="header_i94">
+  const i94Template = `<header class="header_i94 inserted-elem">
   <h1 class="title title_container">Most Recent I94-Results</h1>
   <article class="user-info">
     <span class="material-icons user-icon">person</span>
     <p>For: <h3>{%FIRSTNAME%} {%LASTNAME%}</h3></p>
   </article>
 </header>
-<article class="i94">
+<article class="i94 inserted-elem">
   <h4>Most Recent I-94</h4>
   <hr>
   <p>
@@ -81,17 +85,7 @@ function submitForm(event) {
     Country of Citizenship :{%COUNTRY%}
   </p>
 </article>
-<hr>
-<article class="i94-btns">
-  <button class="btn btn_i94 tn_prev"><span style="display: inline;" class="material-icons">
-    arrow_back_ios
-    </span>PREV</button>
-  <button class="btn btn_i94 btn_print ">
-    <span style="display: inline;" class="material-icons">
-      print
-      </span>PRINT</button>
-</article>
-                       </section>`; //i94 template to be filled with user data
+`; //i94 template to be filled with user data
 
   //check if any input fields are empty
   checkIfEmpty(formInputFields);
@@ -99,13 +93,14 @@ function submitForm(event) {
   //validate input to see if it matches any records
   if (validInput(formInputFields, i94Records)) {
     //hide form and show i94 records
-    formContainer.classList.add("inactive"); //hide the form container
+    formContainer.classList.toggle("inactive"); //hide the form container
+    i94Container.classList.toggle("inactive");
     travelerInfoTab.classList.remove("tab-active"); //set the info tab to be inactive
     i94ResultsTab.classList.add("tab-active"); //set the i94 tab to be active
 
     //make an i94 template using user data from the form inputs
     const i94 = getUserTemplate(i94Template, formInputFields); //make the i94 form using user data
-    body.insertAdjacentHTML("beforeend", i94); //insert the i94 section in body
+    i94Container.insertAdjacentHTML("afterbegin", i94); //insert the i94 section in body
   } else {
     alert("Record not found!!");
     clearFields(); //clear all fields
@@ -146,8 +141,11 @@ function validInput(formInputFields, i94Records) {
  * @returns true if the properties match and false otherwise
  */
 function matchRecords(record, inputs) {
+  //split date date to day, mont, and year
+  // to match against the day, month and year of the incoming input
   const [day, month, year] = record.dob.split("/");
 
+  //match corresponding data with record
   if (
     record.firstName === inputs[0].value &&
     record.lastName === inputs[1].value &&
@@ -175,4 +173,36 @@ function getUserTemplate(template, inputs) {
     temp = temp.replaceAll(propertyName, input.value.toUpperCase()); //replace the regex with corresponding input value
   }
   return temp;
+}
+
+/**
+ * goPrevPage: takes you back to the form submission page
+ */
+function goPrevPage() {
+  const i94Container = document.querySelector("#container_i94");
+  const formContainer = document.querySelector("#container_form");
+  const i94Tab = document.querySelector(".tab_i94-results");
+  const infoTab = document.querySelector(".tab_traveler-info");
+
+  //change active tab
+  i94Tab.classList.toggle("tab-active");
+  infoTab.classList.toggle("tab-active");
+
+  //change container to be displayed
+  i94Container.classList.toggle("inactive");
+  formContainer.classList.toggle("inactive");
+
+  //remove inserted elements while displaying i94 records
+  removeInsertedElements();
+}
+
+/**
+ * removeInsertedElements: remove elements inserted during i94 generation
+ */
+function removeInsertedElements() {
+  const elements = document.querySelectorAll(".inserted-elem");
+  console.log(elements);
+  for (let elem of elements) {
+    elem.remove();
+  }
 }

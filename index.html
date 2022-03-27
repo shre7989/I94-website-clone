@@ -45,9 +45,10 @@
           services or Immigration and Customs Enforcement.
         </p>
       </header>
-      <hr size="1" color="goldenrod">
-      <span class="material-icons line-icon" id="icon-profile" > person </span>
-    </hr>
+      <!-- Horizontal Line -->
+      <hr size="1" color="goldenrod"> 
+        <span class="material-icons line-icon" id="icon-profile" > person </span>
+      </hr>
       <form id="form">
         <!-- Form -->
         <section id="form-section_bio" class="form-section">
@@ -59,6 +60,7 @@
               <label for="firstName"
                 ><strong class="asterik">*</strong>First (Given) Name:</label
               >
+              <!-- FirstName input Field -->
               <input
                 type="text"
                 name="firstName"
@@ -72,6 +74,7 @@
               <label for="lastName"
                 ><strong class="asterik">*</strong>Last (Family) Name:</label
               >
+              <!-- LastName Input Field -->
               <input
                 type="text"
                 name="lastName"
@@ -91,6 +94,7 @@
               <label for="day"
                 ><strong class="asterik">*</strong>Date of Birth:</label
               >
+              <!-- Day input field -->
               <input
                 type="number"
                 min="0"
@@ -102,9 +106,9 @@
                 placeholder="__ __"
               />
             </span>
-            <!-- Month input -->
+            <!-- Month input Field-->
             <input type="number" name="month" id="month" min="1" max="12" 1name="month" class="form-field_input" placeholder="__ __     "/>
-            <!-- Year Input -->
+            <!-- Year Input Field-->
             <input
               type="number"
               min="1000"
@@ -121,6 +125,7 @@
               </span>
           </fieldset>
         </section>
+        <!-- Horizontal Line -->
         <hr size="1" color="goldenrod" >
         <span class="material-icons line-icon">
           description
@@ -133,6 +138,7 @@
               <label for="documentNo"
               ><strong class="asterik">*</strong>Document No:</label
             >
+            <!-- Document No Input Field -->
             <input type="number" id="documentNo" value="" name="documentNo" class="form-field_input" />
             </span>
 
@@ -146,6 +152,7 @@
               <label for="country"
               ><strong class="asterik">*</strong>Country Of Citizenship:</label
             >
+            <!-- Country Input Field -->
             <input type="text" id="country" name="country" value="" class="form-field_input" /></span>
             <span class="material-icons help-symbol" id="help-symbol_country" >
               help_outline
@@ -154,10 +161,23 @@
         </section>
         <!-- Buttons to submit or cancel form -->
         <section id="form-section_btn" class="form-section">
-          <button class="btn btn-cancel">CANCEL</button>
-          <button type="submit" class="btn btn-submit">SUBMIT</button>
+          <button class="btn btn_cancel">CANCEL</button>
+          <button type="submit" class="btn btn_submit">SUBMIT</button>
         </section>
       </form>
+    </section>
+    <!-- I94 form container -->
+    <section id="container_i94" class="container inactive">
+      <hr>
+      <article class="i94-btns">
+        <button class="btn btn_i94 btn_prev"><span style="display: inline;" class="material-icons">
+          arrow_back_ios
+          </span>PREV</button>
+        <button class="btn btn_i94 btn_print ">
+          <span style="display: inline;" class="material-icons">
+            print
+            </span>PRINT</button>
+      </article>
     </section>
     <script type="text/javascript" src="./index.js"></script>
   </body>
