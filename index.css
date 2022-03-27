@@ -10,15 +10,87 @@ body {
   align-items: center;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  background-color: #eeeeee;
 }
-h1 {
-  font-family: "Times New Roman", Times, serif;
-  color: darkslategrey;
+/* Section title heading styles */
+.title {
   font-size: 2rem;
   letter-spacing: 1px;
   margin-bottom: 1rem;
+}
+.title_header {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: darkslategray;
+}
+i {
+  font-family: "Times New Roman", Times, serif;
+}
+.header_icon-div {
+  position: relative;
+}
+.headerLine {
+  width: 30vw;
+  margin-bottom: 1rem;
+  border: 0;
+  height: 1px;
+  background-color: slateblue;
+}
+.icon_header-line {
+  position: absolute;
+  left: 45%;
+  top: -120%;
+
+  color: slateblue;
+  padding: 0.5rem;
+  background-color: white;
+}
+/* common container styling*/
+.title_container {
+  font-family: "Times New Roman", Times, serif;
+  color: darkslategrey;
   font-weight: 500;
 }
+/* styling for header above the form section */
+#header {
+  width: 100vw;
+  background-color: white;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+nav {
+  margin-top: 2rem;
+  height: 6vh;
+  width: 30vw;
+  border-bottom: 2px solid white;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #cccccc;
+  background-color: #eeeeee;
+  color: #aaaaaa;
+  border-bottom: none;
+}
+.tab-heading {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.tab_traveler-info {
+  border-right: none;
+}
+/* Common text stylings */
 p {
   color: grey;
   font-family: Arial, Helvetica, sans-serif;
@@ -34,12 +106,15 @@ label {
   padding-bottom: 0.5rem;
 }
 /*main container*/
-#container {
+.container {
   width: 50vw;
   padding: 2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: white;
+  margin-bottom: 2rem;
 }
 
+/* form-container related styling */
 #form-header {
   display: flex;
   flex-direction: column;
@@ -119,6 +194,8 @@ label {
 }
 .btn {
   padding: 15px 20px;
+  width: 100px;
+  height: 50px;
   border-radius: 5px;
   border: none;
   transition: all 0.3s;
@@ -148,7 +225,7 @@ hr {
   left: 48%;
   color: goldenrod;
   padding: 1rem;
-  transform: translateY(-50%);
+  transform: translateY(-110%);
   background-color: white;
 }
 .help-symbol {
@@ -158,6 +235,81 @@ hr {
   cursor: pointer;
   color: black;
 }
+/* I94 record styling */
+.header_i94 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.user-info {
+  width: 100%;
+  align-self: flex-start;
+  padding: 1rem 0.5rem;
+  background-color: #fcf4e2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.user-info p {
+  margin-right: 0.5rem;
+  color: rgb(136, 101, 14);
+  font-weight: 200;
+}
+.user-icon {
+  color: goldenrod;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+h3 {
+  color: rgb(136, 101, 14);
+}
+
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #01205b;
+}
+hr {
+  margin-bottom: 2rem;
+  height: 1px;
+  border: 0;
+  background-color: black;
+}
+.i94 > p {
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  color: #01205b;
+  font-weight: 600;
+}
+.user-data {
+  margin-top: 1rem;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+}
+.btn_prev {
+  color: white;
+  background-color: lightgray;
+}
+.i94-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn_i94 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn_print {
+  color: white;
+  background: #0071bc;
+  border: 3px solid #205493;
+}
+.btn_print:hover {
+  background: #205493;
+  border-color: #0071bc;
+}
 /* Helper classes */
 .inactive {
   display: none;
@@ -165,4 +317,11 @@ hr {
 .invalid_input {
   border: none;
   box-shadow: 0 0 1px 1.5px rgb(255, 77, 77);
+}
+.tab-active {
+  background-color: white;
+  border: 3px solid darkblue;
+  border-bottom: none;
+  font-weight: 800;
+  color: darkblue;
 }
