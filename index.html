@@ -8,14 +8,37 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" type="text/css" href="./index.css" />
     <title>I94</title>
   </head>
   <body>
-    <section id="container">
+    <!-- Header section above the form -->
+    <header id="header">
+      <h1 class="title title_header">Get Most Recent I-94</h1>
+      <div class="header_icon-div">
+        <hr class="headerLine"/>
+        <span class="material-icons icon_header-line">description</span>
+      </div>
+      <i>Get your most recent I-94 form to prove your 
+        legal visitor status in the United States</i>
+      <nav>
+        <div class="tab tab_traveler-info tab-active">
+          <h2 class="tab-heading">
+            Enter Traveler Info
+          </h2>
+        </div>
+        <div class="tab tab_i94-results">
+          <h2 class="tab-heading">
+            Most Recent I-94 Results
+          </h2>
+        </div>
+      </nav>
+    </header>
+    <!-- Form and i94 container -->
+    <section id="container_form" class="container">
       <!-- main container for form and related information about i94 -->
       <header id="form-header">
-        <h1>Enter Your Traveler Info</h1>
+        <h1 class="title title_container">Enter Your Traveler Info</h1>
         <p>
           <strong>Note:</strong>The info returned may not reflect applications
           submitted to or benefits received by U.S. Citizenship and immigration
@@ -80,14 +103,14 @@
               />
             </span>
             <!-- Month input -->
-            <input type="number" id="month" min="1" max="12" 1name="month" class="form-field_input" placeholder="__ __     "/>
+            <input type="number" name="month" id="month" min="1" max="12" 1name="month" class="form-field_input" placeholder="__ __     "/>
             <!-- Year Input -->
             <input
               type="number"
               min="1000"
               max="2022"
               minlength="4"
-              name="day"
+              name="year"
               value=""
               class="form-field_input"
               id="year"
