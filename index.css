@@ -206,12 +206,14 @@ label {
   filter: brightness(90%);
 }
 .btn-submit {
-  background-color: greenyellow;
+  background-color: #0071bc;
   font-weight: bold;
-  color: black;
+  border: 3px solid #205493;
+  color: white;
 }
 .btn-cancel {
   background-color: red;
+  border: 3px solid rgba(197, 11, 11, 0.541);
   font-weight: bold;
   color: white;
 }
