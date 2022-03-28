@@ -70,7 +70,7 @@ function submitForm(event) {
 </header>
 <article class="i94 inserted-elem">
   <h4>Most Recent I-94</h4>
-  <hr>
+  <hr class='i94-hr'>
   <p>
     Admission (I-94) Record Number : 445039962A2 <br>
     Most Recent Date of Entry: 2020 January 16 <br>

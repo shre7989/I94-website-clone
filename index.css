@@ -274,7 +274,7 @@ h4 {
   font-family: Arial, Helvetica, sans-serif;
   color: #01205b;
 }
-hr {
+.i94-hr {
   margin-bottom: 2rem;
   height: 1px;
   border: 0;
@@ -325,7 +325,7 @@ hr {
   left: 48%;
   color: goldenrod;
   padding: 1rem;
-  transform: translateY(-110%);
+  transform: translateY(-50%);
   background-color: white;
 }
 .help-symbol {
