@@ -6,8 +6,9 @@ const printBtn = document.querySelector(".btn_print"); //print page button
 
 //eventlisteners
 submitBtn.addEventListener("click", submitForm); // submit form on click
+cancelBtn.addEventListener("click", () => window.close()); //close the current tab
 prevBtn.addEventListener("click", goPrevPage); //go back to page on click
-printBtn.addEventListener("click", () => window.print()); //print window contents on click
+printBtn.addEventListener("click", downloadI94Pdf); //download i94 as pdf
 
 //functions
 /**
@@ -200,9 +201,20 @@ function goPrevPage() {
  * removeInsertedElements: remove elements inserted during i94 generation
  */
 function removeInsertedElements() {
+  //get all the elements inserted during i94 generation
   const elements = document.querySelectorAll(".inserted-elem");
-  console.log(elements);
+
+  //remove all the elements
   for (let elem of elements) {
     elem.remove();
   }
+}
+
+/**
+ * downloadI94Pdf: downloads the I-94 form
+ */
+function downloadI94Pdf() {
+  const i94Container = document.querySelector("#container_i94");
+
+  html2pdf().from(i94Container).save(); //download the pdf using 194 container as template
 }
