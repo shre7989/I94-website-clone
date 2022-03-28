@@ -1,0 +1,30 @@
+[
+    {
+    "firstName":"John",
+    "lastName":"Murphy",
+    "dob":"03/4/1936",
+    "document":448799,
+    "country":"USA"
+},
+    {
+    "firstName":"Vivek",
+    "lastName":"Murty",
+    "dob":"04/1/1936",
+    "document":4486689,
+    "country":"India"
+},
+    {
+    "firstName":"Chin",
+    "lastName":"Muai",
+    "dob":"03/7/1968",
+    "document":448893,
+    "country":"China"
+},
+    {
+    "firstName":"Nitin",
+    "lastName":"Bhure",
+    "dob":"02/2/1963",
+    "document":4348893,
+    "country":"India"
+}
+]
