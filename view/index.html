@@ -23,12 +23,12 @@
       <i>Get your most recent I-94 form to prove your 
         legal visitor status in the United States</i>
       <nav>
-        <div class="tab tab_traveler-info tab-active">
+        <div class="tab tab_traveler-info {%TRAVELER_TAB%}">
           <h2 class="tab-heading">
             Enter Traveler Info
           </h2>
         </div>
-        <div class="tab tab_i94-results">
+        <div class="tab tab_i94-results {%I94_TAB%}">
           <h2 class="tab-heading">
             Most Recent I-94 Results
           </h2>
@@ -36,7 +36,7 @@
       </nav>
     </header>
     <!-- Form and i94 container -->
-    <section id="container_form" class="container">
+    <section id="container_form" class="container {%FORM%}" >
       <!-- main container for form and related information about i94 -->
       <header id="form-header">
         <h1 class="title title_container">Enter Your Traveler Info</h1>
@@ -143,11 +143,11 @@
           <!-- Passport doc No field set -->
           <fieldset id="form-fieldSet_docNo" class="form-fieldSet">
             <span style="display: inline-block;">
-              <label for="documentNo"
+              <label for="document"
               ><strong class="asterik">*</strong>Document No:</label
             >
             <!-- Document No Input Field -->
-            <input type="number" id="documentNo" value="" name="documentNo" class="form-field_input" />
+            <input type="number" id="documentNo" value="" name="document" class="form-field_input" />
             </span>
 
             <span title="Enter Your Passport No"class="material-icons help-symbol" id="help-symbol_doc">
@@ -175,12 +175,39 @@
       </form>
     </section>
     <!-- I94 form container -->
-    <section id="container_i94" class="container inactive">
+    <section id="container_i94" class="container {%I94%}">
+      <header class="header_i94 inserted-elem">
+        <h1 class="title title_container">Most Recent I94-Results</h1>
+        <article class="user-info">
+          <span class="material-icons user-icon">person</span>
+          <p>For: <h3>{%FIRSTNAME%} {%LASTNAME%}</h3></p>
+        </article>
+      </header>
+      <article class="i94 inserted-elem">
+        <h4>Most Recent I-94</h4>
+        <hr class='i94-hr'>
+        <p>
+          Admission (I-94) Record Number : 445039962A2 <br>
+          Most Recent Date of Entry: 2020 January 16 <br>
+          Class of Admission : F1 <br>
+          Admit Until Date : D/S <br>
+          Details provided on the I-94 Information form:<br>
+        </p>
+        <p class="user-data">
+          Last/Surname : {%LASTNAME%} <br>
+          First (Given) Name : {%FIRSTNAME%} <br>
+          Birth Date : {%DOB%} <br>
+          Document Number :{%DOCUMENT%} <br>
+          Country of Citizenship :{%COUNTRY%}
+        </p>
+      </article>
       <hr class="i94-hr">
       <article class="i94-btns">
-        <button class="btn btn_i94 btn_prev"><span style="display: inline;" class="material-icons">
-          arrow_back_ios
-          </span>PREV</button>
+        <form action="" method="get">
+          <button type="submit" class="btn btn_i94 btn_prev"><span style="display: inline;" class="material-icons">
+            arrow_back_ios
+            </span>PREV</button>
+        </form>
         <button class="btn btn_i94 btn_print ">
           <span style="display: inline;" class="material-icons icon_print">
             print
