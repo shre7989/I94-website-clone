@@ -1,5 +1,5 @@
 const fs = require("fs");
-
+const I94 = require("../model/I94");
 const homePage = fs.readFileSync(
   `${__dirname}\\..\\public\\index.html`,
   "utf-8"
