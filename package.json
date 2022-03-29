@@ -1,0 +1,22 @@
+{
+  "name": "i94",
+  "version": "1.0.0",
+  "description": "I94 web clone",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shre7989/I94-website-clone.git"
+  },
+  "author": "Mausam Shrestha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shre7989/I94-website-clone/issues"
+  },
+  "homepage": "https://github.com/shre7989/I94-website-clone#readme",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
