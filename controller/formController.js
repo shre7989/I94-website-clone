@@ -1,6 +1,6 @@
 const fs = require("fs");
 const I94 = require("../model/I94");
-const homePage = fs.readFileSync(`${__dirname}\\..\\view\\index.html`, "utf-8");
+const homePage = fs.readFileSync(`${__dirname}/../view/index.html`, "utf-8");
 
 function getI94Model(input) {
   const userInfo = { ...input };
